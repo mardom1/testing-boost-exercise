@@ -10,3 +10,16 @@ jobs:
         run: sudo apt-get install clang-format
       - name: Run style check
         run: clang-format -n -Werror src/* tests/*.cpp
+    
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install packages
+        run: sudo apt-get build-essential cmake libyaml-cpp-dev libeigen3-dev
+      - name: Create build dir
+        run: mkdir build && cd build
+      - name: Run CMake
+        run: cmake ..
+      - name: Run make
+        run: make
