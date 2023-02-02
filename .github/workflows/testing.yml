@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install clang-format
-        run: sudo apt-get install clang-format
+        run: sudo apt-get update && sudo apt-get install clang-format
       - name: Run style check
         run: clang-format -n -Werror src/* tests/*.cpp
     
@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install packages
-        run: sudo apt-get install build-essential cmake libyaml-cpp-dev libeigen3-dev libboost-dev
+        run: sudo apt-get update && sudo apt-get install build-essential cmake libyaml-cpp-dev libeigen3-dev libboost-test-dev
       - name: Run CMake
         run: mkdir build && cd build && cmake ..
       - name: Run make
