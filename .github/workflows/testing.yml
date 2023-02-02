@@ -27,7 +27,7 @@ jobs:
           name: build-artifacts
           path: |
             build/testsidemade
-            CTestTestfile.cmake
+            build/CTestTestfile.cmake
           retention-days: 1
 
   test:
@@ -42,4 +42,4 @@ jobs:
         with:
           name: build-artifacts
       - name: Run tests
-        run: cd build && make test
+        run: cd build && ctest
