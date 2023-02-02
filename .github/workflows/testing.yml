@@ -7,6 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install clang-format
-        run: apt-get install clang-format
+        run: sudo apt-get install clang-format
       - name: Run style check
         run: clang-format -n src/* tests/*
