@@ -25,7 +25,9 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: build-artifacts
-          path: build/
+          path: |
+            build/testsidemade
+            CTestTestfile.cmake
           retention-days: 1
 
   test:
