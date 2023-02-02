@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install packages
-        run: sudo apt-get install build-essential cmake libyaml-cpp-dev libeigen3-dev
+        run: sudo apt-get install build-essential cmake libyaml-cpp-dev libeigen3-dev libboost-test-dev
       - name: Run CMake
         run: mkdir build && cd build && cmake ..
       - name: Run make
